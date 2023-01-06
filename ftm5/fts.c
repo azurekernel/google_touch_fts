@@ -5845,7 +5845,7 @@ static void fts_suspend_work(struct work_struct *work)
 
 	reinit_completion(&info->bus_resumed);
 
-	__pm_stay_awake(info->wakesrc);
+	__pm_wakeup_event(info->wakesrc, 500);
 
 	info->resume_bit = 0;
 
@@ -6599,7 +6599,7 @@ static int fts_probe(struct spi_device *client)
 
 #ifdef DYNAMIC_REFRESH_RATE
 	/* Set default display refresh rate */
-	info->display_refresh_rate = 60;
+	info->display_refresh_rate = 75;
 #endif
 
 	dev_set_drvdata(info->dev, info);
