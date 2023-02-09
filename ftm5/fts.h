@@ -170,7 +170,7 @@
 #undef CHARGER_MODE	/* /< enable the support to charger mode feature
 			 * (comment to disable) */
 
-#define GLOVE_MODE	/* /< enable the support to glove mode feature (comment
+#define GLOVE_MODE 1	/* /< enable the support to glove mode feature (comment
 			 * to disable) */
 
 #undef COVER_MODE	/* /< enable the support to cover mode feature (comment

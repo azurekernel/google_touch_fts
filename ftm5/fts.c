@@ -969,6 +969,9 @@ static ssize_t glove_mode_store(struct device *dev,
 				struct device_attribute *attr, const char *buf,
 				size_t count)
 {
+	/* do not let userspace mess with it */
+	return count;
+
 	char *p = (char *)buf;
 	unsigned int temp;
 	int res;
@@ -6805,7 +6808,7 @@ static int fts_probe(struct spi_device *client)
 	  * if one feature want to be enabled from the start,
 	  * set the corresponding value to 1)*/
 	info->gesture_enabled = 0;
-	info->glove_enabled = 0;
+	info->glove_enabled = 1;
 	info->charger_enabled = 0;
 	info->cover_enabled = 0;
 	info->grip_enabled = 0;
